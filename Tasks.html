@@ -1,23 +1,90 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<!-- saved from url=(0036)http://127.0.0.1:5500/academics.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <title>Dropdown Menu</title>
-    <link rel="stylesheet" href="./Dropdown Menu_files/style.css">
-    <link href="./Dropdown Menu_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
     
+    <link href="./academics_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        .icon-bar {
+  width: 100px;
+  background-color: #555;
+  overflow: auto;
+  size: 70px;
+}
+  .menu_bar{
+    background-color: black;
    
+  }
+  .icon-bar a:hover {
+  background-color: #000;
+}
+.active{
+    size: 45px;
+    color: aqua;
+   height: 5px;
+   margin-right: 10px;
+  
+}
+     
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+    </style>
 </head>
-
 <body>
-    <script src="./Dropdown Menu_files/bootstrap.bundle.min.js.download" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-
+    <script src="./academics_files/bootstrap.bundle.min.js.download" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
       <div class="container-fluid" style="background-color: cyan;">
-        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="font-size: 35px; color: blue; font-family: Arial;">SAKWA<br> HIGHSCHOOL</a>
+        <a class="navbar-brand" href="http://127.0.0.1:5500/academics.html#" style="font-size: 35px; color: blue; font-family: Arial;">SAKWA<br> HIGHSCHOOL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           
@@ -36,9 +103,8 @@
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:5500/about%20us.html">About us</a>
             </li>
-            
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/index.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5500/academics.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Academics
               </a>
               <ul class="dropdown-menu">
@@ -47,7 +113,7 @@
                 <li><a class="dropdown-item" href="http://127.0.0.1:5500/academics.html">form 3</a></li>
                 <li><a class="dropdown-item" href="http://127.0.0.1:5500/academics.html">form 4</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="http://127.0.0.1:5500/index.html#">Something else here</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:5500/academics.html#">Something else here</a></li>
               </ul>
             </li>
             <li>
@@ -56,11 +122,12 @@
                   <button class="dropbtn" style="color: aliceblue;">Registration</button>
                   <div class="dropdown-content">
                   <a href="http://127.0.0.1:5500/registration.html">student</a>
-                  <a href="http://127.0.0.1:5500/index.html#">teacher</a>
+                  <a href="http://127.0.0.1:5500/academics.html#">teacher</a>
                   
                 </div>
               </div>
             </div></li>              
+                        
           </ul>
         
           <form class="d-flex" role="search">
@@ -70,80 +137,60 @@
         </div>  
       </div>
     </nav>
-    <div class="sp-background" style="background-image: url(https://www.mhskabarak.sc.ke/images/speasyimagegallery/albums/1/images/mhsk-profiling-19.jpg);"></div>
     
-    <div class="content">
-      <div>
-        <h1 class="head" style="font-size: 50px; color: chocolate;font-family: Arial;"> MIXED SECONDARY SCHOOL</h1>
-        <h1 class="head" style="font-size: 45px; color: orangered;"> <strong style="color: purple;">SAKWA</strong> HIGHSCHOOL</h1>
-            <p class="head" style="color: aqua; margin-top: 2px;">Strive for <em>Success</em></p>
-          </div>
-          
-    </div> 
-  
-
-<nav>
-  <div class="sp-page-title parallax_4 lazyloaded" data-bg="https://www.mhskabarak.sc.ke/images/masthead/MHSK-Masthead.jpg" style=" height: 600px;  background-image: url(&quot;https://www.mhskabarak.sc.ke/images/masthead/MHSK-Masthead.jpg&quot;); background-position: 50% 51px;">
-    <div class="container" style="height: 100px;"><h2 class="page_title" itemprop="headline"></h2><nav class="mod-breadcrumbs__wrapper" aria-label="MHSK | Breadcrumbs">
-
-	<ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="mod-breadcrumbs breadcrumb">
-		<li class="mod-breadcrumbs__item breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="http://127.0.0.1:5500/" class="pathway"><span itemprop="name">SHS</span></a><span class="breadcrumb_divider"> / <span><meta itemprop="position" content="1"></span></span></li><li class="mod-breadcrumbs__item breadcrumb-item active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name"></span><meta itemprop="position" content="2"></li>	</ol>
-    <div id="box model" style="background-color: lightgrey;
-    width: 400px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: auto;
-    position: absolute;
-    margin-left: 510px;
-    margin-top: 0%;
-    height: 80%;">
-      <h3 class="sppb-image-layout-title" style="text-align: center; margin-left: 27px; box-sizing: content-box;">Embodiment <strong>of Hope</strong></h3>
-
-      <p data-private="redact" data-wt-guid="9b3d66ba-5e90-4586-a55b-9f0edb32bd09" data-pm-slice="1 1 []">Sakwa High School  anchors all its endeavors on the fear of the Lord and Christian values. The Board of Directors, the School Administration, the staff, students and other stakeholders put God first in their day-to-day activities. This is in tandem with the school’s vision and mission. The school aims to produce an all-round person who is armed to face the world bravely with book knowledge and survival skills for any psychological and social challenges.</p>
-    </div>
-    <img class="sppb-img-responsive image-fit sppb-element-lazy sppb-element-loaded" src="./Dropdown Menu_files/30b.jpg" alt="Moi" data-small="https://www.mhskabarak.sc.ke/images/gallery/30b.jpg" loading="lazy" style="width: 40%; margin-left: 40px;">
-     
-   
-</nav>
-  </div>
-    </div>
-
-    
-   
-    
-      
-
-    
- 
+    <div class="menu_bar">
+        <h1 style="color: aliceblue; font-size: 45px; text-align: center;">School Results</h1>
+        <div class="icon bar"><a class="active" href="http://127.0.0.1:5500/index.html"><i class="fa fa-home"></i></a></div>
         
-         
+    </div>
+    <div>
+        <ul>
+            <li><a href="http://127.0.0.1:5500/page1.html"></a></li>
+        </ul>
+    </div>
+    <h1>END OF YEAR RESULTS</h1>
+    <div class="dropdown_menu">
+        <ul>
+            <li><a href="http://127.0.0.1:5500/academics.html#">Form 1 </a> <table bg="" color="black" width="100px" border="2px">
+                <tbody><tr bg="" color="black">
+                    <th>Name</th>
+                    <th>admission</th>
+                    <th>marks</th>
+                </tr>
+                <tr><td>john</td>
+                <td>1204</td>
+                <td>405</td>
+                </tr><tr>
+                    <td>peter</td>
+                    <td>1323</td>
+                    <td>290</td>
+                </tr>
+                <tr>
+                    <td>ruth</td>
+                    <td>1235</td>
+                    <td>345</td>
+                </tr>
+                <tr>
+                    <td>emily</td>
+                    <td>1250</td>
+                    <td>307</td>
+        
+                </tr>
+                <tr>
+                    <td>jackie</td>
+                    <td>1456</td>
+                    <td>407</td>
+                </tr>
+            </tbody></table></li>
+            <li><a href="http://127.0.0.1:5500/academics.html#">form 2</a></li>
+            <li><a href="http://127.0.0.1:5500/academics.html#">form 3</a></li>
+            <li><a href="http://127.0.0.1:5500/academics.html#">form 4</a></li>
+        </ul>
+    </div>
+
+
     
-      
-  
-
-            
-         
-
-
-          
-           
-            
-                            
-                           
-                           
-                          
- 
-          
-       
-    
-      
-     
-      
-      
-
-      
-   
-  <div class="card-group" style="margin-top: 0px;">
+  <div class="card-group" style="margin-top: 500px;">
     <div class="card">
     <div class="card-body" style="background-color: black;">
     <h5 class="card-title" style="background-color: aqua;">short story</h5>
@@ -166,22 +213,8 @@
     School's Mission: To produce men and women of integrity to serve this nation.
     School's Vision: To make Sakwa High School a Centre of academic excellence in the country.</p>
 </div>
-  
-  
 
- 
     
-    
-  
-
-
-
-
-
-
-
-
-
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
@@ -221,9 +254,4 @@
 	// ]]>
 </script>
 
-
-
-
-
-
-</div></div></nav></body></html>
+</div></div></body></html>
