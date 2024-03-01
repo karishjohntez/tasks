@@ -104,10 +104,7 @@ body {
   }
   ul li{
     list-style: none;
-    margin-left: 6px;
-    margin-top: 27px;
-    font-size: 17px;
-    margin-right: 2px;
+    
   
   }
   
@@ -115,7 +112,7 @@ body {
   
   
   .dropdown {
-    margin-right: 50px;
+    margin-right: 5px;
   }
   
   .content{

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:5500/Gallery.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gallery</title>
+    <link rel="htmlsheet" href="http://127.0.0.1:5500/page1.html">
+    
+    <link href="./gallery_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+   
+    height: 100vh;
+    background-color: #f0f0f0;
+
+      }
+      .slide {
+    display: none;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    outline: none;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+  .icon-bar {
+width: 100px;
+background-color: #555;
+overflow: auto;
+size: 70px;
+}
+.menu_bar{
+  background-color: black;
+  margin-top: 30px;
+ 
+}
+.icon-bar a:hover {
+background-color: #000;
+}
+.active{
+  size: 5px;
+  color: aqua;
+ height: 5px;
+ margin-right: 10px;
+ 
+}
+   
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+     
+
+
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+      <div class="container-fluid" style="background-color: cyan; height: 85px;" >
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="font-size: 35px; color: blue; font-family: Arial;">SAKWA HIGHSCHOOL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          
+        </button>
+     
+  
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/Gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/about%20us.html">About us</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tasks
+              </a>
+              <ul class="dropdown-menu" style="background-color: goldenrod; height: auto; margin-bottom: 20px; padding-bottom: 2px;">
+                <li><a class="dropdown-item" href="/Tasks.html">Task 1</a></li>
+                <li><a class="dropdown-item" href="#">Task 2</a></li>
+                <li><a class="dropdown-item" href="#">Task 3</a></li>
+                <li><a class="dropdown-item" href="#">Task 4</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            
+            <li>
+              <div class="dropdown mt-3">
+                <div class="dropdown">
+                  <button class="dropbtn" style="color: aliceblue; margin-top: auto; margin-right: 6px;">Registration</button>
+                  <div class="dropdown-content" style="background-color: goldenrod;">
+                  <a href="http://127.0.0.1:5500/registration.html">student</a>
+                  <a href="http://127.0.0.1:5500/index.html#">teacher</a>
+                  
+                </div>
+              </div>
+            </div></li>              
+          </ul>
+        
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" style=" color: aliceblue;           background-color: darkgreen; ">Search</button>
+          </form>
+        </div>  
+      </div>
+    </nav>
+  <section id="sp-page-title">
+    <div class="row">
+      <div id="sp-title" class="col-lg-12 ">
+        <div class="sp-column">
+          <div class="sp-page-title-wrapper">
+            <div class="sp-page-title lazyloaded" data-bg="https://www.mhskabarak.sc.ke/images/masthead/MHSK-Masthead.jpg" style="background-image: url(&quot;https://www.mhskabarak.sc.ke/images/masthead/MHSK-Masthead.jpg&quot;);">
+              <div class="container">
+                <h2 class="page_title" itemprop="headline">Photo Gallery</h2>
+                <nav class="mod-breadcrumbs__wrapper" aria-label="SHS | Breadcrumbs" style="height: 100PX;">
+    <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="mod-breadcrumbs breadcrumb">
+      <li class="mod-breadcrumbs__item breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="http://127.0.0.1:5500/" class="pathway"><span itemprop="name">MHSK</span></a><span class="breadcrumb_divider"> / <span><meta itemprop="position" content="1"></span></span></li><li class="mod-breadcrumbs__item breadcrumb-item active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Photo Gallery</span><meta itemprop="position" content="2"></li>	</ol>
+                 </nav>
+    </div>
+      </div>
+         </div>
+          </div>
+             </div>
+                </div>
+</section>
+  
+  
+  <div class="menu_bar">
+    <h1 style="color: aliceblue; font-size: 45px; text-align: center;">School gallery</h1>
+    <div class="icon bar"><a class="active" href="http://127.0.0.1:5500/index.html"><i class="fa fa-home"></i></a></div>
+    
+
+  
+</div>
+
+<div>
+  <h1>Below are some pictures of the school compound</h1>
+</div>
+<div style=" 
+  margin: 5px;
+  border: 1px solid #ccc;
+ float: left;
+  width: 100%;
+
+  
+">
+  <img src="./gallery_files/mhsk-profiling-20.jpg" class="rounded float-start" alt="fimg">
+      <img src="./gallery_files/mhsk-profiling-16_thumb.jpg" class="rounded float-start" alt="simg">
+      <img src="./gallery_files/mhsk-profiling-13_thumb.jpg">
+      <img src="./gallery_files/mhsk-profiling-14_thumb.jpg">
+      <img src="./gallery_files/mhsk-profiling-11_thumb.jpg">
+      <img src="./gallery_files/mhsk-profiling-8_thumb.jpg">
+      <img src="./gallery_files/mhsk-profiling-7_thumb.jpg">
+      <img src="./gallery_files/27_thumb.jpg">
+      <img src="./gallery_files/17_thumb.jpg">
+      <img src="./gallery_files/5_thumb.jpg">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    
+    <div class="slideshow container"> 
+        <div class="slide" style="display: block;">
+            <img src="./gallery_files/2023-01-16.jpg" width="600" height="400">
+            <img src="./gallery_files/mhsk-profiling-20.jpg">
+        </div>
+        <div class="slide" style="display: none;"> <img src="./gallery_files/2023-01-16(1).jpg" width="600" height="400"></div>
+
+        <button class="prev" onclick="plusSlides(-1)"></button>
+        <button class="next" onclick="plusSlides(1)"></button>
+        
+        
+       
+ 
+        
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+          let slides = document.getElementsByClassName("slide");
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          slides[slideIndex-1].style.display = "block";
+          setTimeout(showSlides, 2000); // Change image every 6 seconds
+        }
+    
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+      </script>
+    
+  <div class="card-group" style="margin-top: 500px;">
+    <div class="card">
+    <div class="card-body" style="background-color: black;">
+    <h5 class="card-title" style="background-color: aqua;">short story</h5>
+    <p class="card-text" style="color: aliceblue;">Immediately after independence, there was a great thirst of education and especially Secondary and University education. Sakwa High School was started with that requirement in mind. It opened its doors on 29th March 1965 with 71 students. These students started learning in a house which belonged to a white settler just below Ruty Shopping Centre near the main road. Sakwa High School currently occupies a land of 54 acres.</p>
+    
+    </div>
+    </div>
+    <div class="card" style="background-color: black;">
+    
+    <div class="card-body" style="background-color: black;">
+    <h5 class="card-title" style="background-color: aqua;">Our Goals</h5>
+    <p class="card-text" style="color: aliceblue;">"Sakwa High School aims to prepare students to make a positive contribution to the development of the society and to acquire the values of national patriotism, self-respect, self-reliance, cooperation, adaptability, a sense of purpose and self-discipline. "</p>
+    </div>
+    </div>
+    <div class="card" style="background-color: aqua;">
+    
+    <div class="card-body" style="background-color: black;">
+    <h5 class="card-title" style="background-color: aqua;">Our Objectives</h5>
+    <p class="card-text" style="color: aliceblue;">School's Motto:Striving for excellence.
+    School's Mission: To produce men and women of integrity to serve this nation.
+    School's Vision: To make Sakwa High School a Centre of academic excellence in the country.</p>
+</div>
+
+   
+   
+    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></div></body></html>
