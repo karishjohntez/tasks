@@ -116,18 +116,70 @@ background-color: #000;
   background-color: #3e8e41;
 }
 
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 32px;
+  }
+  
+  .row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+    -ms-flex: 50%; /* IE 10 */
+    flex: 50%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  
+
      
 
 
     </style>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-
+   
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
       <div class="container-fluid" style="background-color: cyan; height: 85px;" >
-        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="font-size: 35px; color: blue; font-family: Arial;">SAKWA HIGHSCHOOL</a>
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="margin-top: 0px; color: blue; font-family: Arial; font-size: 15px;">SAKWA HIGHSCHOOL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           
@@ -153,9 +205,9 @@ background-color: #000;
               </a>
               <ul class="dropdown-menu" style="background-color: goldenrod; height: auto; margin-bottom: 20px; padding-bottom: 2px;">
                 <li><a class="dropdown-item" href="/Tasks.html">Task 1</a></li>
-                <li><a class="dropdown-item" href="#">Task 2</a></li>
-                <li><a class="dropdown-item" href="#">Task 3</a></li>
-                <li><a class="dropdown-item" href="#">Task 4</a></li>
+                <li><a class="dropdown-item" href="/Tasks2.html">Task 2</a></li>
+                <li><a class="dropdown-item" href="/Task3.html">Task 3</a></li>
+                <li><a class="dropdown-item" href="/Task4.html">Task 4</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
@@ -164,7 +216,7 @@ background-color: #000;
             <li>
               <div class="dropdown mt-3">
                 <div class="dropdown">
-                  <button class="dropbtn" style="color: aliceblue; margin-top: auto; margin-right: 6px;">Registration</button>
+                  <button class="btn btn-outline-success" type="submit" style=" color: aliceblue;           background-color: darkgreen; ">Registration</button>
                   <div class="dropdown-content" style="background-color: goldenrod;">
                   <a href="http://127.0.0.1:5500/registration.html">student</a>
                   <a href="http://127.0.0.1:5500/index.html#">teacher</a>
@@ -181,6 +233,9 @@ background-color: #000;
         </div>  
       </div>
     </nav>
+    
+
+   
   <section id="sp-page-title">
     <div class="row">
       <div id="sp-title" class="col-lg-12 ">
@@ -191,7 +246,7 @@ background-color: #000;
                 <h2 class="page_title" itemprop="headline">Photo Gallery</h2>
                 <nav class="mod-breadcrumbs__wrapper" aria-label="SHS | Breadcrumbs" style="height: 100PX;">
     <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="mod-breadcrumbs breadcrumb">
-      <li class="mod-breadcrumbs__item breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="http://127.0.0.1:5500/" class="pathway"><span itemprop="name">MHSK</span></a><span class="breadcrumb_divider"> / <span><meta itemprop="position" content="1"></span></span></li><li class="mod-breadcrumbs__item breadcrumb-item active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Photo Gallery</span><meta itemprop="position" content="2"></li>	</ol>
+      <li class="mod-breadcrumbs__item breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="http://127.0.0.1:5500/" class="pathway"><span itemprop="name">SHS</span></a><span class="breadcrumb_divider"> / <span><meta itemprop="position" content="1"></span></span></li><li class="mod-breadcrumbs__item breadcrumb-item active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Photo Gallery</span><meta itemprop="position" content="2"></li>	</ol>
                  </nav>
     </div>
       </div>
@@ -211,76 +266,119 @@ background-color: #000;
 </div>
 
 <div>
-  <h1>Below are some pictures of the school compound</h1>
+  <h1>Below are some pictures in our gallery</h1>
 </div>
-<div style=" 
-  margin: 5px;
-  border: 1px solid #ccc;
- float: left;
-  width: 100%;
 
+  </head>
+  <body>
   
-">
-  <img src="./gallery_files/mhsk-profiling-20.jpg" class="rounded float-start" alt="fimg">
-      <img src="./gallery_files/mhsk-profiling-16_thumb.jpg" class="rounded float-start" alt="simg">
-      <img src="./gallery_files/mhsk-profiling-13_thumb.jpg">
-      <img src="./gallery_files/mhsk-profiling-14_thumb.jpg">
-      <img src="./gallery_files/mhsk-profiling-11_thumb.jpg">
-      <img src="./gallery_files/mhsk-profiling-8_thumb.jpg">
-      <img src="./gallery_files/mhsk-profiling-7_thumb.jpg">
-      <img src="./gallery_files/27_thumb.jpg">
-      <img src="./gallery_files/17_thumb.jpg">
-      <img src="./gallery_files/5_thumb.jpg">
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-    
-    <div class="slideshow container"> 
-        <div class="slide" style="display: block;">
-            <img src="./gallery_files/2023-01-16.jpg" width="600" height="400">
-            <img src="./gallery_files/mhsk-profiling-20.jpg">
-        </div>
-        <div class="slide" style="display: none;"> <img src="./gallery_files/2023-01-16(1).jpg" width="600" height="400"></div>
-
-        <button class="prev" onclick="plusSlides(-1)"></button>
-        <button class="next" onclick="plusSlides(1)"></button>
-        
-        
-       
- 
-        
+  <!-- Header -->
+  <div class="header" id="myHeader">
+    <h1>Image Grid</h1>
+    <p>Click on the buttons to change the grid view.</p>
+    <button class="btn" onclick="one()">1</button>
+    <button class="btn active" onclick="two()">2</button>
+    <button class="btn" onclick="four()">4</button>
+  </div>
+  
+  <!-- Photo Grid -->
+  <div class="row"> 
+    <div class="column">
+      <img src="/w3images/wedding.jpg" style="width:100%">
+      <img src="/w3images/rocks.jpg" style="width:100%">
+      <img src="/w3images/falls2.jpg" style="width:100%">
+      <img src="/w3images/paris.jpg" style="width:100%">
+      <img src="/w3images/nature.jpg" style="width:100%">
+      <img src="/w3images/mist.jpg" style="width:100%">
+      <img src="/w3images/paris.jpg" style="width:100%">
     </div>
-    <script>
-        let slideIndex = 0;
-        showSlides();
+    <div class="column">
+      <img src="/w3images/underwater.jpg" style="width:100%">
+      <img src="/w3images/ocean.jpg" style="width:100%">
+      <img src="/w3images/wedding.jpg" style="width:100%">
+      <img src="/w3images/mountainskies.jpg" style="width:100%">
+      <img src="/w3images/rocks.jpg" style="width:100%">
+      <img src="/w3images/underwater.jpg" style="width:100%">
+    </div>  
+    <div class="column">
+      <img src="/w3images/wedding.jpg" style="width:100%">
+      <img src="/w3images/rocks.jpg" style="width:100%">
+      <img src="/w3images/falls2.jpg" style="width:100%">
+      <img src="/w3images/paris.jpg" style="width:100%">
+      <img src="/w3images/nature.jpg" style="width:100%">
+      <img src="/w3images/mist.jpg" style="width:100%">
+      <img src="/w3images/paris.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="/w3images/underwater.jpg" style="width:100%">
+      <img src="/w3images/ocean.jpg" style="width:100%">
+      <img src="/w3images/wedding.jpg" style="width:100%">
+      <img src="/w3images/mountainskies.jpg" style="width:100%">
+      <img src="/w3images/rocks.jpg" style="width:100%">
+      <img src="/w3images/underwater.jpg" style="width:100%">
+    </div>
+  </div>
+  
+  <script>
+  // Get the elements with class="column"
+  var elements = document.getElementsByClassName("column");
+  
+  // Declare a loop variable
+  var i;
+  
+  // Full-width images
+  function one() {
+      for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "100%";  // IE10
+      elements[i].style.flex = "100%";
+    }
+  }
+  
+  // Two images side by side
+  function two() {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "50%";  // IE10
+      elements[i].style.flex = "50%";
+    }
+  }
+  
+  // Four images side by side
+  function four() {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "25%";  // IE10
+      elements[i].style.flex = "25%";
+    }
+  }
+  
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("myHeader");
+  var btns = header.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-        function showSlides() {
-          let slides = document.getElementsByClassName("slide");
-          for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}
-          slides[slideIndex-1].style.display = "block";
-          setTimeout(showSlides, 2000); // Change image every 6 seconds
-        }
-    
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-      </script>
-    
+   
   <div class="card-group" style="margin-top: 500px;">
     <div class="card">
     <div class="card-body" style="background-color: black;">
