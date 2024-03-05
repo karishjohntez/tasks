@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0036)http://127.0.0.1:5500/academics.html -->
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,13 +79,26 @@
   background-color: #3e8e41;
 }
 
+#coordinatesTable {
+
+  width: 100%;
+  border-collapse: collapse;
+
+
+}
+th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
     </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary ">
     <div class="container-fluid" style="background-color: cyan; height: 49px;" >
       
-      <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="margin-top: 16px; color: blue; font-family: Arial; font-size: 15px;">SAKWA HIGHSCHOOL</a>
+      <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#" style="margin-top: 16px; color: blue; font-family: Arial; font-size: 15px;">SAKWA   HIGH SCHOOL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         
@@ -187,6 +200,41 @@
         </tr>
       </tbody>
     </table>
+    <h1 style="text-decoration: underline;">Enter Points</h1>
+
+    <form id="coordinates">
+      <label for="x1">Point A (x1, y1):</label>
+      <input type="number" id="x1" name="x1" required>
+      <input type="number" id="y1" name="y1" required><br>
+
+      <label for="x2">Point B  (x2, y2):</label>
+      <input type="number" id="x2" name="x2" required>
+      <input type="number" id="y2" name="y2" required><br>
+
+      <label for="x3">Point C (x3, y3):</label>
+      <input type="number" id="x3" name="x3" required>
+      <input type="number" id="y3" name="y3" required><br>
+
+      <label for="x4">Point D (x4, y4):</label>
+      <input type="number" id="x4" name="x4" required>
+      <input type="number" id="y4" name="y4" required><br>
+       <input type="submit" value="calculate" id="submit">
+
+    </form>
+
+    <h2 style="text-decoration: underline;">Points Sorted by Distance from Origin</h2>
+    <table id="coordinatesTable">
+      <thead>
+          <tr>
+              <th>Point</th>
+              <th>X</th>
+              <th>Y</th>
+              <th>Distance from Origin</th>
+          </tr>
+      </thead>
+      <tbody id="pointsBody">
+      </tbody>
+  </table>
 
     
     
@@ -217,46 +265,58 @@
     School's Mission: To produce men and women of integrity to serve this nation.
     School's Vision: To make Sakwa High School a Centre of academic excellence in the country.</p>
 </div>
+<script>
+  
+  function calculateDistance(x, y) {
+        return Math.sqrt(x * x + y * y);
+    }
 
     
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
+    document.getElementById("coordinates").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        
+        var x1 = parseFloat(document.getElementById("x1").value);
+        var y1 = parseFloat(document.getElementById("y1").value);
+        var x2 = parseFloat(document.getElementById("x2").value);
+        var y2 = parseFloat(document.getElementById("y2").value);
+        var x3 = parseFloat(document.getElementById("x3").value);
+        var y3 = parseFloat(document.getElementById("y3").value);
+        var x4 = parseFloat(document.getElementById("x4").value);
+        var y4 = parseFloat(document.getElementById("y4").value);
+
+        var points = [
+            { name: 'A', x: x1, y: y1 },
+            { name: 'B', x: x2, y: y2 },
+            { name: 'C', x: x3, y: y3 },
+            { name: 'D', x: x4, y: y4 }
+        ];
+
+        points.forEach(point => {
+            point.distance = calculateDistance(point.x, point.y);
+        });
+
+        
+        points.sort((a, b) => b.distance - a.distance);
+
+        
+        var tableBody = document.getElementById("pointsBody");
+        tableBody.innerHTML = "";
+        points.forEach(point => {
+            var row = "<tr><td>" + point.name + "</td><td>" + point.x + "</td><td>" + point.y + "</td><td>" + point.distance.toFixed(2) + "</td></tr>";
+            tableBody.innerHTML += row;
+        });
+    });
+
 </script>
+
+
+
+
+
+
+
+    
 <script src="./academics_files/bootstrap.bundle.min.js.download" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

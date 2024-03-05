@@ -14,7 +14,8 @@
     document.getElementById("tax").textContent = tax.toFixed(2);
     document.getElementById("nhif").textContent = nhif.toFixed(2);
     document.getElementById("housingLevy").textContent = housingLevy.toFixed(2);
-    document.getElementById("netPay").textContent = netPay.toFixed(2);
+    
+    document.getElementById("netPay").textContent = netPay.toFixed(2)
     
     
     function calculateNetPay() {
