@@ -91,7 +91,36 @@ th, td {
         padding: 8px;
         text-align: left;
     }
+    
+        table {
+             background-color: aqua;
+             width: 100%;
+             border-collapse: collapse;
+        }
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
 
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        th,td {
+            border: 1px solid black;
+        }
+        thead {
+            margin-top: 5px;
+        }
+        #pointForm {
+            margin-bottom: 50px;
+        }
+        #submit {
+            margin-top: 5px;
+            size: 40%;
+        }
+    
     </style>
 </head>
 <body>
@@ -200,40 +229,43 @@ th, td {
         </tr>
       </tbody>
     </table>
-    <h1 style="text-decoration: underline;">Enter Points</h1>
+    
+    
+<body>
+  <h1>Points Sorted by Distance from Origin</h1>
+  
+  <form id="pointForm">
+      <label for="x1">Point A:</label>
+      <input type="number" id="x1" name="x1" step="any" placeholder="X coordinate">
+      <input type="number" id="y1" name="y1" step="any" placeholder="Y coordinate"><br>
 
-    <form id="coordinates">
-      <label for="x1">Point A (x1, y1):</label>
-      <input type="number" id="x1" name="x1" required>
-      <input type="number" id="y1" name="y1" required><br>
+      <label for="x2">Point B:</label>
+      <input type="number" id="x2" name="x2" step="any" placeholder="X coordinate">
+      <input type="number" id="y2" name="y2" step="any" placeholder="Y coordinate"><br>
 
-      <label for="x2">Point B  (x2, y2):</label>
-      <input type="number" id="x2" name="x2" required>
-      <input type="number" id="y2" name="y2" required><br>
+      <label for="x3">Point C:</label>
+      <input type="number" id="x3" name="x3" step="any" placeholder="X coordinate">
+      <input type="number" id="y3" name="y3" step="any" placeholder="Y coordinate"><br>
 
-      <label for="x3">Point C (x3, y3):</label>
-      <input type="number" id="x3" name="x3" required>
-      <input type="number" id="y3" name="y3" required><br>
+      <label for="x4">Point D:</label>
+      <input type="number" id="x4" name="x4" step="any" placeholder="X coordinate">
+      <input type="number" id="y4" name="y4" step="any" placeholder="Y coordinate"><br>
 
-      <label for="x4">Point D (x4, y4):</label>
-      <input type="number" id="x4" name="x4" required>
-      <input type="number" id="y4" name="y4" required><br>
-       <input type="submit" value="calculate" id="submit">
+      <button type="submit" id="submit">Submit</button>
+  </form>
 
-    </form>
-
-    <h2 style="text-decoration: underline;">Points Sorted by Distance from Origin</h2>
-    <table id="coordinatesTable">
+  <table >
       <thead>
           <tr>
               <th>Point</th>
               <th>X</th>
               <th>Y</th>
-              <th>Distance from Origin</th>
+              <th>Distance</th>
           </tr>
       </thead>
       <tbody id="pointsBody">
-      </tbody>
+          
+      
   </table>
 
     
