@@ -58,7 +58,18 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
-        
+   table{
+    border: 2px solid black;
+    border-collapse: separate;
+    margin: 20px auto;
+
+
+   } 
+   th, td {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+   }    
     
 
 
@@ -125,10 +136,48 @@
       </div>  
     </div>
   </nav>
-  <script src="/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #f1f1f1;
+    }
+    #ordering {
+      text-decoration: underline;
+    }
+    table {
+      border-collapse: collapse;
+      margin-left: 0px;
+    }
+    #calculate {
+      margin-top: 5px;
+      background-color: #3e8e41;
+      color: floralwhite;
+    }
+    #calculate:hover{
+      background-color: blue;
+    }
+  </style>
 
-  
-    
+</head>
+<body>
+  <div id="order">
+    <h1 id="ordering">ORDERING POINTS FROM A GIVEN POINT</h1>
+    <label for="x-coordinate">Input:</label>
+    <input type="number" id="x-coordinate" placeholder="x coordinate" value="x2" required>
+    <input type="number" id="y-coordinate" placeholder="y coordinate" value="y2" required>
+    <input type="number" id="z-coordinate" placeholder="z coordinate" value="z2" required><br>
+    <button id="calculate" onclick="calculateOrder()">Calculate</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Distance</th>
+            <th>Angles</th>
+        </tr>
+    </thead>
+    <tbody id="resultspoint"></tbody>
+</table>
+<script src="/Task4.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
   </body>
 </html>
