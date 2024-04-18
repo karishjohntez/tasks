@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rectangular Matrix Diagonal Max Finder</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        margin-right: 10px;
+    }
+    input[type="number"] {
+        width: 60px;
+        padding: 5px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        padding: 8px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    p {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    #find {
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <label for="row">Rows</label>
+        <input type="number" id="row">
+        <button onclick="addRows()">Add Rows</button>
+        <label for="column">Columns</label>
+        <input type="number" id="column">
+        <button onclick="addColumns()">Add Columns</button><br>
+        <button onclick="findMaxLeftDiagonal()" id="find">Find Largest on Left Diagonal</button>
+        <table id="rowcolumns">
+            <thead>
+              
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p id="maxLeftDiagonal"></p>
+    </div>
+</div>
+
+<script>
+    function addRows() {
+        const rows = parseInt(document.getElementById("row").value);
+        const table = document.getElementById("rowcolumns");
+        const columns = parseInt(document.getElementById("column").value);
+
+        if (isNaN(rows) || isNaN(columns) || rows <= 0 || columns <= 0) {
+            alert("Please enter valid row and column numbers.");
+            return;
+        }
+
+        for (let i = 0; i < rows; i++) {
+            const newRow = table.insertRow();
+            for (let j = 0; j < columns; j++) {
+                const cell = newRow.insertCell();
+                cell.innerHTML = "<input type='number'>";
+            }
+        }
+    }
+
+    function addColumns() {
+        const columns = parseInt(document.getElementById("column").value);
+        const table = document.getElementById("rowcolumns");
+        const rowCount = table.rows.length;
+
+        if (isNaN(columns) || columns <= 0) {
+            alert("Please enter a valid column number.");
+            return;
+        }
+
+        for (let i = 0; i < rowCount; i++) {
+            for (let j = 0; j < columns; j++) {
+                const cell = table.rows[i].insertCell();
+                cell.innerHTML = "<input type='number'>";
+            }
+        }
+    }
+
+    function findMaxLeftDiagonal() {
+        const table = document.getElementById("rowcolumns");
+        let max = -Infinity;
+        const rowCount = table.rows.length;
+        const colCount = table.rows[0].cells.length;
+
+        const minDim = Math.min(rowCount, colCount);
+        for (let i = 0; i < minDim; i++) {
+            const cellValue = parseFloat(table.rows[i].cells[minDim - 1 - i].
+            querySelector('input').value);
+            if (!isNaN(cellValue) && cellValue > max) {
+                max = cellValue;
+            }
+        }
+
+        document.getElementById("maxLeftDiagonal").textContent = 
+        "Largest element on the left diagonal: " + max;
+    }
+</script>
+</body>
+</html>
