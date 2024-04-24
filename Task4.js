@@ -1,73 +1,73 @@
+const table = document.getElementById("rowcolumns");
+const btn = document.getElementById("button");
 
-function calculateOrder() {
+btn.addEventListener("click", () => {
+  const columns = parseFloat(document.getElementById("columns").value);
+  const rows = parseFloat(document.getElementById("rows").value);
 
-  const px = parseFloat(document.getElementById("x-coordinate").value);
-  const py = parseFloat(document.getElementById("y-coordinate").value);
-  const pz = parseFloat(document.getElementById("z-coordinate").value);
+  table.innerHTML = ''; // Clear the table content
 
- 
-  const pointP = { x: px, y: py, z: pz };
-
-  
-  const points_A = [
-      { x: 24, y: 9, z: 6 },
-      { x: 20, y: 38, z: 35 },
-      { x: 16, y: 13, z: 56 },
-      { x: 37, y: 32, z: 26 },
-      { x: 21, y: 28, z: 15 },
-      { x: 17, y: 12, z: 23 },
-      { x: 40, y: 30, z: 10 },
-      { x: 25, y: 17, Z: 32},
-      { x: 2,  y: 9, z: 4 },
-      { x: 8, y: 8, z: 5 },
-      { x: 1, y: 1, z: 5 },
-      { x: 7, y: 2, z: 6 },
-      { x: 2, y: 8, z: 5 },
-      { x: 7, y: 1, z: 3 },
-      { x: 0, y: 3, z: 10 },
-      ];
-
-  
-  const output = points_A.map(point => {
-      const distance = calculateDistance(pointP, point);
-      const angle = calculateAngle(pointP, point);
-      return { distance, angle, point };
-  });
-
-  output.sort((a, b) => {
-      if (a.distance !== b.distance) {
-          return a.distance - b.distance;
-      } else {
-          return a.angle - b.angle;
-      }
-  });
-
-  displayResults(output);
-}
-
-function calculateDistance(p1, p2) {
-  return Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2 + (p1.z - p2.z) ** 2);
-}
-
-function calculateAngle(p1, p2) {
-  return Math.atan2(p2.y - p1.y, p2.x - p1.x) * (180 / Math.PI);
-}
-
-function displayResults(output) {
-    const resultsPoint = document.getElementById("resultspoint");
-    resultsPoint.innerHTML = "";
-  
-    let Content = ""; 
-  
-    output.forEach(output => {
-      const distance = output.distance.toFixed(2);
-      const angle = output.angle.toFixed(2);
-      
-      
-      Content += `<tr><td>${distance}</td><td>${angle}</td></tr>`;
-    });
-  
-    
-    resultsPoint.innerHTML = Content;
+  // Validate rows and columns
+  if (isNaN(rows) || rows <= 0 || isNaN(columns) || columns <= 0) {
+    alert("Please enter valid numbers of rows and columns");
+    return;
   }
+
+  const allRandomNumbers = []; // Array to store all random numbers
+
+  // Generate all random numbers for rows and columns
+  for (let i = 0; i < rows; i++) {
+    const rowRandomNumbers = []; // Array to store random numbers for the current row
+    for (let j = 0; j < columns; j++) {
+      const randomNumber = Math.floor(Math.random() * 100);
+      rowRandomNumbers.push(randomNumber);
+    }
+    allRandomNumbers.push(rowRandomNumbers);
+    
+  }
+  console.log((allRandomNumbers));
+
+  // Add rows and columns to the table using generated random numbers
+  for (let i = 0; i < rows; i++) {
+    const newRow = table.insertRow();
+    for (let j = 0; j < columns; j++) {
+      const cell = newRow.insertCell();
+      const randomNumber = allRandomNumbers[i][j];
+      cell.innerHTML = `<input type='number' value=${randomNumber}>`;
+    }
+  }
+
+  // Finding the largest number on the diagonal part
+  let largest=allRandomNumbers[0][rows-1];
+  //console.log(largest);
+  for(let i =0; i<rows;i++){
+    for(let j=rows-1-i; j<allRandomNumbers[i].length - i; j++){
+      //console.log(allRandomNumbers[i][j]);
+      if(largest<allRandomNumbers[i][j]){
+        largest=allRandomNumbers[i][j];
+      }
+      else{
+        largest=largest;
+      }
+    }
+  }
+  console.log(largest);
+
   
+  document.getElementById("largest").value = largest;
+
+
+
+});
+
+// Function to reset table
+document.getElementById("resetTable").addEventListener("click", resetTable);
+
+function resetTable() {
+  table.innerHTML = ""; // Clear the table content
+  document.getElementById("rows").value = "";
+  document.getElementById("columns").value = "";
+  document.getElementById("largest").value = "";
+}
+
+        
