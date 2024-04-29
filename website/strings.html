@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+#matches {
+    text-align: center;
+    margin: 20px auto; 
+    max-width: 600px;}
+
+button {
+    background-color: cornsilk;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #8b4513;
+    color: white; 
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical; 
+    margin-bottom: 20px;
+}
+
+#output {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px; 
+}
+
+    </style>
+</head>
+<body>
+    <div id="matches"> 
+        <h1>Check words Match</h1>
+        <p id="inputText">Input a paragraph </p>
+        <textarea id="inputTextArea" cols="30" rows="10" placeholder="input text"></textarea> 
+        <button id="button">Find matches</button>
+    </div>
+    <div id="output"></div>
+    
+   
+    <script src="/website/strings.js"></script>
+</body>
+</html>
+
