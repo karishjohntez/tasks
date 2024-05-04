@@ -3,7 +3,7 @@ function splitWords(inputText) {
     let lowerCaseText = inputText.toLowerCase();
 
     // Split the text into an array of words  capture the result
-    let wordsArray = lowerCaseText.split( " ");
+    let wordsArray = lowerCaseText.split(" ");
 
     // Filter out any empty strings from the array and capture the result
     let filteredWordsArray = wordsArray.filter(word => word.trim() !== "");
@@ -13,7 +13,7 @@ function splitWords(inputText) {
 }
 
 function countWords(words) {
-    var wordCount = {};
+    let wordCount = {};
     words.forEach(function(word) {
         if (wordCount[word]) {
             wordCount[word]++;
@@ -25,7 +25,7 @@ function countWords(words) {
 }
 
 function findMatches(wordCount) {
-    var matches = [];
+    let matches = [];
     for (var word in wordCount) {
         if (wordCount[word] > 1) {
             matches.push(word);
@@ -36,10 +36,10 @@ function findMatches(wordCount) {
 
 function handleButtonClick() {
     const output = document.getElementById("output");
-    var inputText = document.getElementById("inputTextArea").value;
-    var words = splitWords(inputText);
-    var wordCount = countWords(words);
-    var matches = findMatches(wordCount);
+    let inputText = document.getElementById("inputTextArea").value;
+    let words = splitWords(inputText);
+    let wordCount = countWords(words);
+    let matches = findMatches(wordCount);
     
     if (matches.length > 0) {
         output.innerHTML = `<strong>Matching words:<strong> ${matches.join(", ")}`;
